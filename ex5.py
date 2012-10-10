@@ -8,8 +8,8 @@ eyes = 'Brown'
 hair = 'Brown'
 
 print "Let's talk about %s." % name
-# output in cm
-print "He's %d cm tall" % (height * 2.54)
+# output in cm %.2f
+print "He's %.2f cm tall" % (height * 2.54)
 # output in kg
 print "He's %d kg heavy." % (weight / 2.2)
 print "Actually that's not too heavy."
