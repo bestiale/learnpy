@@ -3,14 +3,14 @@ def print_numbers(numbers):
     for num in numbers:
         print num
 
-def count(i, max_count):
-    while i < max_count:
-        print "At the top i is %d" % i
-        numbers.append(i)
+def count(first, last):
+    while first < last:
+        print "At the top i is %d" % first
+        numbers.append(first)
         
-        i = i + 1
+        first += 1
         print "Numbers now: ", numbers
-        print "At the bottom i is %d" % i
+        print "At the bottom i is %d" % first
         
 i = 0
 max_count = 6
