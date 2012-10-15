@@ -9,7 +9,7 @@ def check_result(userres, realres):
         print "That's right.. go on!"
         return True
     else:
-        print "You lost! Game Over!"
+        print "You reached Level % d - Game Over!" % start
         return False
 
 start = 1
@@ -18,6 +18,8 @@ name = intro()
 check = True
 
 while check == True:
+    print "\nRound %d" % start
+    print "---------"
     print "How much is %d * %d ?" % (start, start)
     rightres = start * start
     res = raw_input("> ")
@@ -26,4 +28,4 @@ while check == True:
         check = check_result(res, rightres)
         start += 1
     else:
-        print "Type a number pls"
+        print "Type a number please"
