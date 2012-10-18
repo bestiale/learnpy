@@ -8,9 +8,8 @@ class Game(object):
     def play(self):
         user_pt = 0
         cpu_pt = 0
-        name = raw_input("Please enter your name: > ")
-        print "Hello %s :) " % name
-        print "************************\n"
+        name = self.intro()
+
         try:
             while True: 
                 user_hand = self.next_round()
@@ -23,7 +22,7 @@ class Game(object):
                     pass
                 
         except (EOFError, KeyboardInterrupt):
-            print "Endergebniss: %s %d CPU %d\n" % (name, user_pt, cpu_pt)
+            print "Result: %s %d CPU %d\n" % (name, user_pt, cpu_pt)
             if user_pt > cpu_pt:
                 print "You won!! Good work"
             elif user_pt < cpu_pt:
@@ -31,6 +30,14 @@ class Game(object):
             else:
                 print "Nobody has won! Try again!"
             print "\nBye"
+            
+    def intro(self):
+        name = raw_input("Please enter your name: > ")
+        print "\n************************"
+        print "Hello %s :) " % name
+        print "************************\n"
+        return name
+        
         
     def check(self, user):
         cpu_hand = randint(1, 3)
