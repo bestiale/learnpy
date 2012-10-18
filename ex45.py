@@ -72,6 +72,7 @@ class Game(object):
             user_hand = int(raw_input("> "))
         except ValueError:
             print "This is not a number, please try again"
+            user_hand = 0
             self.next_round()
         return user_hand
             
