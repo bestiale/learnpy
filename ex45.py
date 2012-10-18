@@ -1,11 +1,9 @@
+# encoding: utf-8
+
 from sys import exit
 from random import randint
 
 class Game(object):
-
-    
-    def __init__(self):
-        pass
 
     def play(self):
         user_pt = 0
@@ -24,7 +22,7 @@ class Game(object):
                 else:
                     pass
                 
-        except EOFError:
+        except (EOFError, KeyboardInterrupt):
             print "Endergebniss: %s %d CPU %d\n" % (name, user_pt, cpu_pt)
             if user_pt > cpu_pt:
                 print "You won!! Good work"
