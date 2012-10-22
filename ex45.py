@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from sys import exit
+import sys
 from random import randint
 from time import sleep
 
@@ -14,6 +14,7 @@ class Game(object):
         try:
             while True: 
                 user_hand = self.next_round()
+                print "User has %s at the moment" % user_hand
                 point = self.check(user_hand)
                 if point == 1:
                     user_pt += 1
@@ -104,7 +105,7 @@ class Game(object):
         print "\n_____________________________"
         print "\nResult: %s %d CPU %d\n" % (name, user_pt, cpu_pt)
         if user_pt > cpu_pt:
-            print "You won!! Good work"
+            print "You won - Good work :)"
         elif user_pt < cpu_pt:
             print "You lost! I'm sorry"
         else:
