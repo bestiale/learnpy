@@ -51,8 +51,10 @@ class Game(object):
             print "The CPU has: Schere\n"
         elif cpu_hand == 2:
             print "The CPU has: Stein\n"
-        else:
+        elif cpu_hand == 3:
             print "The CPU has: Papier\n"
+        else:
+            pass
         
         if user == cpu_hand:
             print "Nobody receives the point\n"
@@ -74,7 +76,6 @@ class Game(object):
             sleep(3)
             return 1
             
-
         else:
             print "The CPU receives a point\n"
             sleep(3)
@@ -82,6 +83,8 @@ class Game(object):
             
             
     def next_round(self):
+        user_hand = 0
+        
         print "Please choose your hand: \n"
         print "1. Schere \n"
         print "2. Stein \n"
@@ -89,13 +92,11 @@ class Game(object):
         print "(To quit press CTRL-D)"
         try:
             user_hand = int(raw_input("> "))
-            if user_hand not in range(0,4):
+            if user_hand not in range(1,4):
                 print "This number is not valid, please try again"
-                user_hand = 0
                 self.next_round()
         except ValueError:
             print "This is not a number, please try again"
-            user_hand = 0
             self.next_round()
         return user_hand
         
@@ -108,7 +109,7 @@ class Game(object):
             print "You lost! I'm sorry"
         else:
             print "Nobody has won! Try again!"
-        print "\nBye\n"
+        print "\nBye %s\n" % name
             
 a_game = Game()
 a_game.play()
